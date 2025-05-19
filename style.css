@@ -31,14 +31,14 @@ div {
 
 .teras {
     height: 150px;
-    background-color: blue;
+    background-color: rgb(109, 185, 255);
     /* display: inline; */
 }
 
 .taman {
     height: 50px;
     width: 50%;
-    background-color: green;
+    background-color: rgb(107, 231, 107);
     display: inline-block;
     position: relative;
     bottom: 0;
@@ -47,7 +47,7 @@ div {
 }
 
 .kolam {
-    background-color: blueviolet;
+    background-color: rgb(177, 134, 218);
     height: 50px;
     width: 300px;
     display: inline-block;
