@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Informatika</title>
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
+
 <body>
-    <h1 align="center" > WEB INFORMATIKA </h1>
-    <hr width="50%"  size="5px" color="darkgrey">
- 
+    <h1 align="center"> WEB INFORMATIKA </h1>
+    <hr width="50%" size="5px" color="darkgrey">
+
     <nav>
         <ul style="list-style-type: none; text-align: center; padding: 0%;">
             <li style="display: inline; margin: 0% 15px; text-decoration: none;">
@@ -18,32 +20,38 @@
             </li>
             <li style="display: inline; margin: 0% 15px; text-decoration: none;">
                 <a href="about.html">About</a>
-            </li>   
+            </li>
             <li style="display: inline; margin: 0% 15px; text-decoration: none;">
-            <a href="service.html">Services</a></li>
+                <a href="service.html">Services</a>
+            </li>
             <li style="display: inline; margin: 0% 15px; text-decoration: none;">
-            <a href="contact.html">Contact</a></li>          
+                <a href="contact.html">Contact</a>
+            </li>
             <li style="display: inline; margin: 0% 15px; text-decoration: none;">
-            <a href="login.html">Login</a></li>                                             
+                <a href="login.html">Login</a>
+            </li>
+            <li style="display: inline; margin: 0% 15px; text-decoration: none;">
+                <a href="datamahasiswa.php">Data</a>
+            </li>
         </ul>
     </nav>
-    
+
     <hr width="50%" align="center" size="2px" color="black">
     <h1 align="center">
-        <img src = "https://tse1.mm.bing.net/th?id=OIP.e-K9UEHyjtGA7v1keAL3zgHaHa&pid=Api&P=0&h=180" 
-        height="200px">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.e-K9UEHyjtGA7v1keAL3zgHaHa&pid=Api&P=0&h=180"
+            height="200px">
     </h1>
     <p>
-        <b>Lorem ipsum</b> dolor, <i>sit amet</i> consectetur adipisicing elit. 
-        Quidem cum sapiente animi eligendi temporibus dolores itaque, 
-        maiores eum <u>perferendis reprehenderit?</u> In labore perspiciatis 
-        necessitatibus? Sunt reprehenderit ipsa voluptatum dignissimos? 
-        Eos qui debitis vel harum nihil. Impedit, porro, earum molestiae 
-        exercitationem sed adipisci sequi officiis, aperiam iusto vitae 
+        <b>Lorem ipsum</b> dolor, <i>sit amet</i> consectetur adipisicing elit.
+        Quidem cum sapiente animi eligendi temporibus dolores itaque,
+        maiores eum <u>perferendis reprehenderit?</u> In labore perspiciatis
+        necessitatibus? Sunt reprehenderit ipsa voluptatum dignissimos?
+        Eos qui debitis vel harum nihil. Impedit, porro, earum molestiae
+        exercitationem sed adipisci sequi officiis, aperiam iusto vitae
         odit laborum fugiat?
     </p>
     <h2>Daftar Belanja</h2>
-    <ol> 
+    <ol>
         <li>Daging
             <ul>
                 <li>Ayam 1kg</li>
@@ -62,4 +70,5 @@
         </li>
     </ol>
 </body>
+
 </html>
