@@ -1,25 +1,10 @@
 <?php
-    // $nama = "Pitaloka";
-    // echo "Hello World $nama" . " Cantik";
-    // echo$nama;
-
-$koneksi = mysqli_connect("localhost:3307", "root", "", "informatik");
-if (!$koneksi) {
-    die('Koneksi Gagal' . mysqli_connect_error());
-}
-
-
-$result = mysqli_query($koneksi,"SELECT * FROM mahasiswa");
-
-// ambil data (fetch) di lemari kemudian kasih ke aku, caranya
-
-// mysqli_fetch_row()
-// mysqli_fetch_array()
-// mysqli_fetch_assoc()
-// mysqli_fetch_object() 
-
-$mhs= mysqli_fetch_row($result)
-var_dump($mhs[1]);
+// $nama = "Pitaloka";
+// echo "Hello World $nama" . " Cantik";
+// echo$nama;
+require "function.php";
+$query = "SELECT * From mahasiswa";
+$rows = tampildata($query);
 
 ?>
 
@@ -60,11 +45,28 @@ var_dump($mhs[1]);
     <table border="1" cellspacing="0" cellpadding="10px">
         <tr>
             <th>No</th>
+            <th>Foto</th>
             <th>Nama</th>
             <th>NIM</th>
             <th>Jurusan</th>
             <th>Alamat</th>
         </tr>
+
+        <?php $i = 1;
+        foreach ($rows as $mhs) { ?>
+            <tr>
+                <td><?= $i; ?></td>
+                <td>
+                    <img src="image/<?= $mhs['foto']; ?>" alt="<?= $mhs['nama']; ?>" width="120px" />
+                </td>
+                <td><?= $mhs["nama"]; ?></td>
+                <td><?= $mhs["nim"]; ?></td>
+                <td><?= $mhs["jurusan"]; ?></td>
+                <td><?= $mhs["alamat"]; ?></td>
+
+            </tr>
+        <?php $i++;
+        } ?>
     </table>
 </body>
 
