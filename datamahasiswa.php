@@ -42,6 +42,9 @@ $rows = tampildata($query);
         </ul>
     </nav>
     <h1 align="center">Data Mahasiswa</h1>
+    <a href="tambahdata.php"><button style="background-color: blue; cursor:pointer; margin-bottom: 12px;">
+            Tambah Data
+        </button></a>
     <table border="1" cellspacing="0" cellpadding="10px">
         <tr>
             <th>No</th>
@@ -63,6 +66,11 @@ $rows = tampildata($query);
                 <td><?= $mhs["nim"]; ?></td>
                 <td><?= $mhs["jurusan"]; ?></td>
                 <td><?= $mhs["alamat"]; ?></td>
+                <td>
+                    <a href="hapusdata.php/?id=<?= $mhs["id"] ?>">Hapus</a>
+                    |
+                    <a href="ubahdata.php/?id=<?= $mhs["id"] ?>">Edit</a>
+                </td>
 
             </tr>
         <?php $i++;
