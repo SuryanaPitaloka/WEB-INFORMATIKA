@@ -12,6 +12,7 @@ $rows = tampildata($query);
 <html lang="en">
 
 <head>
+   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DATA MAHASISWA</title>
@@ -67,8 +68,7 @@ $rows = tampildata($query);
                 <td><?= $mhs["jurusan"]; ?></td>
                 <td><?= $mhs["alamat"]; ?></td>
                 <td>
-                    <a href="hapusdata.php/?id=<?= $mhs["id"] ?>">Hapus</a>
-                    |
+                    <a href="hapusdata.php/?id=<?= $mhs["id"] ?>" onclick="return confirm('Yakin Data Dihapus?')" >Hapus</a>
                     <a href="ubahdata.php/?id=<?= $mhs["id"] ?>">Edit</a>
                 </td>
 
