@@ -104,41 +104,40 @@ function register($data)
 {
     global $koneksi;
 
-    $username = stripslashes[trim($data["username"])];
+    $username = stripslashes(trim($data["username"]));
+    $username = mysqli_real_escape_string($koneksi, $username);
+
     $password1 = trim($data["password1"]);
     $password2 = trim($data["password2"]);
 
-    $queryusername = "SELECT id from user 
-    where username = $username";
+    $queryusername = "SELECT id FROM user WHERE username = '$username'";
+    
+        $username_check = mysqli_query($koneksi, $queryusername);
 
-    $username_check = mysqli_query($koneksi , $queryusername);
+        var_dump(mysqli_num_rows($username_check));
 
-    if(mysqli_num_rows($username_check) > 0)
-    {
+    if (mysqli_num_rows($username_check) > 0) {
         return "Username Sudah Terdaftar!";
     }
 
-    if(!preg_match('/^[a-zA-Z0-9._-]+$/' , $username));
-    {
+    if (!preg_match('/^[a-zA-Z0-9._-]+$/', $username)) {
         return "Username Tidak Valid!";
     }
 
-    if($password1 !== $password2)
-    {
+    if ($password1 !== $password2) {
         return "Konfirmasi Password Salah!";
     }
-    
+
     $hash_password = password_hash($password1, PASSWORD_DEFAULT);
 
-    $query_insert = "INSERT INTO user VALUES ('' , '$username' , '$hash_password')";
+    $query_insert = "INSERT INTO user (username, password) VALUES ('$username', '$hash_password')";
 
-    if(mysqli_query($koneksi, $query_insert))
-    {
-        return "Registrasi Berhasil";
-    } else 
-    {
-        return "Gagal" . mysqli_error($koneksi);
+    if (mysqli_query($koneksi, $query_insert)) {
+        return "Register Berhasil";
+    } else {
+        return "Gagal: " . mysqli_error($koneksi);
     }
 }
+
 
 ?>

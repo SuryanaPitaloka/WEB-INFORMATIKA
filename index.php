@@ -30,7 +30,7 @@
                 <a href="contact.html">Contact</a>
             </li>
             <li style="display: inline; margin: 0% 15px; text-decoration: none;">
-                <a href="login.html">Login</a>
+                <a href="login.php">Login</a>
             </li>
             <li style="display: inline; margin: 0% 15px; text-decoration: none;">
                 <a href="datamahasiswa.php">Data</a>

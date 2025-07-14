@@ -1,8 +1,12 @@
 <?php
-// $nama = "Pitaloka";
-// echo "Hello World $nama" . " Cantik";
-// echo$nama;
-require "function.php";
+session_start();
+
+if (!isset($_SESSION["login"])) {
+    header("Location: login.php");
+    exit;
+}
+
+require 'function.php';
 $query = "SELECT * From mahasiswa";
 $rows = tampildata($query);
 
@@ -12,7 +16,7 @@ $rows = tampildata($query);
 <html lang="en">
 
 <head>
-   
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DATA MAHASISWA</title>
@@ -35,7 +39,7 @@ $rows = tampildata($query);
                 <a href="contact.html">Contact</a>
             </li>
             <li style="display: inline; margin: 0% 15px; text-decoration: none;">
-                <a href="login.html">Login</a>
+                <a href="logout.php">Logout</a>
             </li>
             <li style="display: inline; margin: 0% 15px; text-decoration: none;">
                 <a href="datamahasiswa.php">Data</a>
@@ -54,6 +58,7 @@ $rows = tampildata($query);
             <th>NIM</th>
             <th>Jurusan</th>
             <th>Alamat</th>
+            <th>Aksi</th>
         </tr>
 
         <?php $i = 1;
@@ -67,8 +72,9 @@ $rows = tampildata($query);
                 <td><?= $mhs["nim"]; ?></td>
                 <td><?= $mhs["jurusan"]; ?></td>
                 <td><?= $mhs["alamat"]; ?></td>
+                
                 <td>
-                    <a href="hapusdata.php/?id=<?= $mhs["id"] ?>" onclick="return confirm('Yakin Data Dihapus?')" >Hapus</a>
+                    <a href="hapusdata.php/?id=<?= $mhs["id"] ?>" onclick="return confirm('Yakin Data Dihapus?')">Hapus</a>
                     <a href="ubahdata.php/?id=<?= $mhs["id"] ?>">Edit</a>
                 </td>
 

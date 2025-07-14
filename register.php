@@ -4,10 +4,24 @@ require "function.php";
 
 if (isset($_POST["submit"])) {
     $message = register($_POST);
-    echo "
+
+    echo $message;
+if($message === "Register Berhasil")
+{
+        echo "
     <script>
         alert('" . addslashes($message) . "');
+        document.location.href = 'login.php';
     </script>";
+}
+    else 
+    {
+        echo "
+        <script>
+            alert('" . addslashes($message) . "');
+            document.location.href = 'register.php';
+        </script>";
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -39,7 +53,7 @@ if (isset($_POST["submit"])) {
                 <input type="password" class="form-control" id="password" name="password2" placeholder="Konfirmasi Password" required>
             </div>
             
-            <button type="submit" class="btn btn-primary w-100" name="Submit">Submit</button>
+            <button type="submit" class="btn btn-primary w-100" name="submit">Submit</button>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
