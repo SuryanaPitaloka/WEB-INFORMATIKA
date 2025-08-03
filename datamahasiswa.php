@@ -27,7 +27,7 @@ $rows = tampildata($query);
     <nav>
         <ul style="list-style-type: none; text-align: center; padding: 0%;">
             <li style="display: inline; margin: 0% 15px; text-decoration: none;">
-                <a href="home.html">Home</a>
+                <a href="index.php">Home</a>
             </li>
             <li style="display: inline; margin: 0% 15px; text-decoration: none;">
                 <a href="about.html">About</a>
